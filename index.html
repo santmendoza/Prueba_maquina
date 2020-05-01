@@ -10,56 +10,65 @@
 <body>
     <div class="container">
         <div><img src="img/1.png" alt=""id="flecha"></div>
-        <div class="cadena">
-            <div class="cuadrado" id="cuadrado">
+        <div class="cadena" id="cadena">
+            <div id="cuadro1"class="cuadrado">
             <h1></h1>
             </div>
-            <div class="cuadrado">
+            <div class="cuadrado" id="cuadro2">
                 <h1>a</h1>
             </div>
             
-            <div class="cuadrado"> 
+            <div class="cuadrado" id="cuadro3"> 
                 <h1>b</h1></div>
-            <div class="cuadrado">
+            <div class="cuadrado" id="cuadro4">
                 <h1>a</h1>
             </div>
-            <div class="cuadrado">
+            <div class="cuadrado" id="cuadro5">
                 <h1>a</h1>
             </div>
-            <div class="cuadrado">
+            <div class="cuadrado"  id="cuadro6">
                 <h1>a</h1>
             </div>
-            <div class="cuadrado">
+            
+            <div class="cuadrado"  id="cuadro7">
                 <h1>b</h1>
             </div>
-            <div class="cuadrado">
+            <div class="cuadrado"  id="cuadro8">
                 <h1>b</h1>
             </div>
-            <div class="cuadrado">
-                <h1>b</h1>
+            <div class="cuadrado"  id="cuadro9"></div>
+            <div class="cuadrado"  id="cuadro10"></div>
+            <div class="cuadrado"  id="cuadro11"></div>
+            <div class="cuadrado"  id="cuadro12"></div>
+            <div class="cuadrado"  id="cuadro13">
+                <h1>h</h1>
             </div>
-            <div class="cuadrado"></div>
-            <div class="cuadrado"></div>
-            <div class="cuadrado"></div>
-            <div class="cuadrado"></div>
-            <div class="cuadrado"></div>
-            <div class="cuadrado"></div>
-            <div class="cuadrado"></div>
-            <div class="cuadrado"></div>
-            <div class="cuadrado"></div>
-            <div class="cuadrado"></div>
-            <div class="cuadrado"></div>
-            <div class="cuadrado"></div>
-            <div class="cuadrado"></div>
+            <div class="cuadrado"  id="cuadro14"></div>
+            <div class="cuadrado"  id="cuadro15"></div>
+            <div class="cuadrado"  id="cuadro16"></div>
+            <div class="cuadrado"  id="cuadro17">
+                <h1>h</h1>
+            </div>
+            <div class="cuadrado"  id="cuadro18">
+                <h1>18</h1>
+            </div>
+            <div class="cuadrado"  id="cuadro19">
+                <h1>19</h1>
+            </div>
+            <div class="cuadrado"  id="cuadro20">
+                <h1>20</h1>
+            </div>
+                       
            
         </div>
 </div>
 
 <script>
-	let cuadro = document.getElementById('cuadrado');
-	let velocidad = 55;
+	let cuadro = document.getElementById ('cuadro');
+	let velocidad = 53;
 	let mTop = 0;
-	let mLeft = 0;
+	let mLeft =0;
+        
 
 	document.addEventListener("keydown", function(e){
 		if (e.keyCode == "39") {
@@ -72,12 +81,18 @@
 
 	function moverDerecha(){
 		mLeft += velocidad;
-		cuadro.style.marginLeft = mLeft + "px";
-	}
+
+        for (x=1; x<=20; x++){
+		document.getElementById('cuadro'+x).style.transform='TranslateX('+mLeft+'px)';
+        }
+    }
 
 	function moverIzquierda(){
 		mLeft -= velocidad;
-		cuadro.style.marginLeft = mLeft + "px";
+        for (x=1; x<=20; x++){
+		document.getElementById('cuadro'+x).style.transform='TranslateX('+mLeft+'px)';
+        }
+    
 	}
 
 

@@ -5,44 +5,49 @@ body{
 .container{
     margin-left: 20px;
     height: 50vh;
-    width: 100%;
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 15px;
+    overflow: auto;
 }
 
 
 
 .cuadrado{
     height: 50px;
-    width: 50px;
+    width:50px;
    float: left;
     background-color:white;
     margin: 2px;
     text-align: center;
+  
     
-
 }
 .cuadrado h1{
     margin-top: 6px;
     text-align: center;
+  
 
 }
 
 .cadena{
         
         height: 55px;
-		width: 1190px;
+		width: 90%;
 		background-color: rosybrown;
-        float: left;
-        margin-left: 15px;
+        border:solid 1px green;
+        overflow: hidden;
 }
 
+.cadena2{
+    width: 80px;
+}
 #flecha{
     position: absolute;
     margin-top:27px;
-    padding-left: 393px;
+    padding-left: 380px;
     width: 50px;
     height: 50px;
     border-color: green;

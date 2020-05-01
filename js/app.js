@@ -81,7 +81,7 @@ while(estado!=3){
                 }
             }
 
-console.log('Se movió a la izquierda :'+l);
+/*console.log('Se movió a la izquierda :'+l);
 console.log('Se movió a la derecha :'+r);
 palabra=palabra.split('z').join('');
 console.log('La palabra resultado es: '+palabra);
@@ -89,4 +89,4 @@ document.write('<h2>Se movió a la izquierda :' +l);
 document.write('<h2>Se movió a la derecha   :' +r);
 document.write('<h2>La palabra resultado es :'+palabra);
 document.write('<h2>La posición donde finaliza es :'+n);
-
+*/

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    
     <link rel="stylesheet" href="css/Styles.css">
     <title>Document</title>
 </head>
@@ -11,7 +12,7 @@
     <div class="container">
         <div><img src="img/1.png" alt=""id="flecha"></div>
         <div class="cadena" id="cadena">
-            <div id="cuadro0"class="cuadrado"></div>
+            <div class="cuadrado" id="cuadro0"></div>
             <div class="cuadrado" id="cuadro1"></div>
             <div class="cuadrado" id="cuadro2"> </div>
             <div class="cuadrado" id="cuadro3"></div>
@@ -29,61 +30,20 @@
             <div class="cuadrado" id="cuadro15"></div>
             <div class="cuadrado" id="cuadro16"></div>
             <div class="cuadrado" id="cuadro17"></div>
-            <div class="cuadrado"  id="cuadro18"></div>
-            <div class="cuadrado"  id="cuadro19">
-                <h1>19</h1>
-            </div>
-            <div class="cuadrado"  id="cuadro20">
-                <h1>20</h1>
-            </div>
-            <div class="cuadrado"  id="cuadro21">
-                <h1>21</h1>
-            </div>
-                       
-           
+            <div class="cuadrado" id="cuadro18"></div>
+            <div class="cuadrado" id="cuadro19"></div>
+            <div class="cuadrado" id="cuadro20"></div>
+            <div class="cuadrado" id="cuadro21"></div>           
         </div>
 </div>
+<form action="">
 
-<script>
-	let cuadro = document.getElementById ('cuadro');
-	let velocidad = 53;
-	let mTop = 0;
-	let mLeft =0;
-        
-
-	document.addEventListener("keydown", function(e){
-		if (e.keyCode == "39") {
-			moverDerecha();
-		}
-		if (e.keyCode == "37") {
-			moverIzquierda();
-		}
-	})
-
-	function moverDerecha(){
-		mLeft += velocidad;
-
-        for (x=0; x<=21; x++){
-		document.getElementById('cuadro'+x).style.transform='TranslateX('+mLeft+'px)';
-        document.getElementById('cuadro'+x).style.transition='transform 1s linear';
-        }
-    }
-
-	function moverIzquierda(){
-		mLeft -= velocidad;
-        for (x=0; x<=22; x++){
-		document.getElementById('cuadro'+x).style.transform='TranslateX('+mLeft+'px)';
-        document.getElementById('cuadro'+x).style.transition='transform 1s linear';
-          
-        }
-    
-	}
-
-
-</script> 
-
-
+    <input id="entrada" type="text" name="cantidad" placeholder="ingresa la expresión"><br>
+    <input id="boton1" type="button" value="Cargar" onclick="cargar()">
+    <input id="boton2" type="reset" value="Ejecutar Máquina" onclick="logica()">
+    </form>
     <script>src="https://cdn.jsdelivr.net/npm/@glidejs/glide"</script>
     <script src="js/app.js"></script>
+    <script src="js/cargar.js"></script>
 </body>
 </html>

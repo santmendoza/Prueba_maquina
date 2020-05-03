@@ -46,24 +46,30 @@ mod=7;
                                
                                 document.getElementById('cuadro'+mod).innerHTML="<h1>a</h1>"; 
                                 expresion=expresion.replaceAt(n, "a");
-                                  moverIzquierda();
+
+                                moverIzquierda();
+                                
                                 r++;
                                 mod++;
                             }else{
                                 if(expresion.charAt(n)=="b"){
                                     
-                                    document.getElementById('cuadro'+mod).innerHTML="<h1>z</h1>"; 
+                                    document.getElementById('cuadro'+mod).innerHTML="<h1>a</h1>"; 
                                     expresion=expresion.replaceAt(n, "a");
+                                    
                                     moverIzquierda();
+                                    
+                                   
                                     r++;
                                     mod++;
                                     
                                 }else{
                                     if(expresion.charAt(n)=="z"){
                                         
-                                        expresion=expresion.replaceAt(n, "z");
+                                        expresion=expresion.replaceAt(n, "a");
                                         
-                                      
+                                        moverDerecha();
+                                       
                                             estado=2;
                                             l++;
                                             n--;
@@ -81,7 +87,7 @@ mod=7;
                             }
                             
                     }
-                    moverDerecha();
+                   
                     sw=1;
                     //Controla el estado Q2 y sus movimientos*/
                     while(estado==2){
@@ -93,6 +99,7 @@ mod=7;
                             l++;
                             moverDerecha();
                             
+                            
                         }else{
                             if(expresion.charAt(n)=="z"){
                                 
@@ -103,6 +110,7 @@ mod=7;
                                 sw=0;
                                 moverIzquierda();
                                 
+                                
                             }
                         }
                         if(sw==1){
@@ -110,7 +118,11 @@ mod=7;
                         
                         }
                         }
+
                     }
+                    
+
+
 
 /*console.log('Se movió a la izquierda :'+l);
 console.log('Se movió a la derecha :'+r);
@@ -126,34 +138,19 @@ document.write('<h2>La posición donde finaliza es :'+n);
     }
 }
 
-
 function moverDerecha(){
-
-    mLeft += velocidad;
-
-    for (x=0; x<=21; x++){
-    document.getElementById('cuadro'+x).style.transform='TranslateX('+mLeft+'px)';
-    document.getElementById('cuadro'+x).style.transition='transform 1s linear';
+    $( ".cuadrado" ).animate({ "left": "+=53px" }, "slow" );
     }
-}
 
 function moverIzquierda(){
-    mLeft -= velocidad;
-    for (x=0; x<=21; x++){
-    document.getElementById('cuadro'+x).style.transform='TranslateX('+mLeft+'px)';
-    document.getElementById('cuadro'+x).style.transition='transform 1s linear';
-      
-    }
-
+    $( ".cuadrado" ).animate({ "left": "-=53px" }, "slow" );
 }
 
-function sleep(milliseconds) {
-    const date = Date.now();
-    let currentDate = null;
-    do {
-      currentDate = Date.now();
-    } while (currentDate - date < milliseconds);
-  }
-  
+function sleep(miliseconds) {
+    var currentTime = new Date().getTime();
+ 
+    while (currentTime + miliseconds >= new Date().getTime()) {
+    }
+ }
 
 

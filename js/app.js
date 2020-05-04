@@ -43,18 +43,24 @@ mod=7;
                     while( estado==1){
                         
                         if(expresion.charAt(n)=="a"){
-                               
-                                document.getElementById('cuadro'+mod).innerHTML="<h1>a</h1>"; 
+                            
+                            $("#cuadro"+mod).fadeIn(function() {
+                                $(this).html("<h1>A</h1>").fadeIn();
+                              });
+                            
+                               //   document.getElementById('cuadro'+mod).innerHTML="<h1>a</h1>"; 
                                 expresion=expresion.replaceAt(n, "a");
-
-                                moverIzquierda();
+                                
+                                moverIzquierda(mod);
                                 
                                 r++;
                                 mod++;
                             }else{
                                 if(expresion.charAt(n)=="b"){
-                                    
-                                    document.getElementById('cuadro'+mod).innerHTML="<h1>a</h1>"; 
+                                    $("#cuadro"+mod).fadeIn(function() {
+                                        $(this).html("<h1>A</h1>").fadeIn();
+                                      });
+                                   // document.getElementById('cuadro'+mod).innerHTML="<h1>a</h1>"; 
                                     expresion=expresion.replaceAt(n, "a");
                                     
                                     moverIzquierda();
@@ -137,13 +143,17 @@ document.write('<h2>La posición donde finaliza es :'+n);
         alert("No puedes jugar si está vacía la expresión");
     }
 }
-
+k="slow";
 function moverDerecha(){
-    $( ".cuadrado" ).animate({ "left": "+=53px" }, "slow" );
+    $( ".cuadrado" ).animate({ "left": "+=53px" },k);
     }
 
 function moverIzquierda(){
-    $( ".cuadrado" ).animate({ "left": "-=53px" }, "slow" );
+    
+    //setTimeout(function() {document.getElementById('cuadro'+mod).innerHTML ="<h1>H</h1>";
+    //},5000); 
+    $( ".cuadrado" ).animate({ "left": "-=53px" },k);
+    
 }
 
 function sleep(miliseconds) {
